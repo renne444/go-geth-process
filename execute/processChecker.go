@@ -2,9 +2,10 @@ package execute
 
 import (
 	"fmt"
-	"gethProcess/util"
 	"os/exec"
 	"time"
+	"util/Network"
+	"util/localFileIO"
 )
 
 /*
@@ -32,7 +33,7 @@ func (pc *ProcessChecker)composeInitCmd() string{
 }
 
 func (pc *ProcessChecker)InitProcess() bool{
-	if !util.IsNonEmptyDir(pc.config.DataDir) {
+	if !localFileIO.IsNonEmptyDir(pc.config.DataDir) {
 		//util.CreateFolder(pc.config.DataDir)
 		cmd := exec.Command("/bin/sh","-c",pc.composeInitCmd())
 		fmt.Printf("[INFO]init cmd `%s` will be exec\n",pc.composeInitCmd())
@@ -49,7 +50,7 @@ func (pc *ProcessChecker)InitProcess() bool{
 
 //check geth process by checking the occupation of the port and the RPC port
 func (pc *ProcessChecker) checkProcessExist() bool{
-	return util.PortInUse(pc.config.Port) && util.PortInUse(pc.config.RpcPort)
+	return Network.PortInUse(pc.config.Port) && Network.PortInUse(pc.config.RpcPort)
 }
 
 func (pc *ProcessChecker) composeRunCmd() string{

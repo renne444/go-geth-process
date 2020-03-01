@@ -11,7 +11,7 @@ type Connector struct {
 
 func (conn *Connector)LoadConfig(configPath string) *Config {
 	if configPath == ""{
-		configPath = "/home/yuki/dev/workplace/eth-connect/config/config.json"
+		configPath = "/home/yuki/dev/workplace/eth-connect/src/gethProcess/config.json"
 	}
 	viper.SetConfigFile(configPath)
 	viper.SetConfigType("json")

@@ -1,0 +1,14 @@
+{
+  "GethPath":"/home/yuki/go/src/github.com/ethereum/go-ethereum/build/bin/geth",
+  "Port": 30337,
+  "DataDir" :  "/home/yuki/dev/workplace/sol/private/bootNode",
+  "NetworkId": 7700,
+  "Mine": true,
+  "MineThread": 3,
+  "CoinBase" : "0x10fe514CFB2b478d170c1789c5492712F3d2Cc1A",
+  "GenesisFile": "/home/yuki/dev/workplace/sol/genesis.json",
+  "Rpc": true,
+  "RpcAddr": "0.0.0.0",
+  "RpcPort": 7890,
+  "GethLogPath": "/home/yuki/dev/workplace/eth-connect/log/geth-run.log"
+}

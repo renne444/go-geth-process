@@ -53,11 +53,12 @@ func (pc *ProcessChecker) checkProcessExist() bool{
 }
 
 func (pc *ProcessChecker) composeRunCmd() string{
-	cmd := fmt.Sprintf(`%s --datadir %s --networkid %d  --etherbase "%s"`,
+	cmd := fmt.Sprintf(`%s --datadir %s --networkid %d  --etherbase "%s" --port %d`,
 								pc.config.GethPath,
 								pc.config.DataDir,
 								pc.config.NetworkId,
 								pc.config.CoinBase,
+								pc.config.Port,
 								)
 	if pc.config.Rpc {
 		cmd += fmt.Sprintf(` --rpc --rpcaddr "%s" --rpcport "%d"`,

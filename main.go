@@ -8,8 +8,11 @@ import (
 
 func main(){
 
-	configPath := flag.String("c","","config file path")
-	fmt.Println("path = "+ *configPath)
+	var configPath string
+	flag.StringVar(&configPath,"c","","config file path")
+	flag.Parse()
+
+	fmt.Println("path = "+ configPath)
 	var conn process.Connector
-	conn.Start(*configPath)
+	conn.Start(configPath)
 }

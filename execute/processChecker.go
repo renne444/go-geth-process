@@ -62,7 +62,7 @@ func (pc *ProcessChecker) composeRunCmd() string{
 								pc.config.Port,
 								)
 	if pc.config.Rpc {
-		cmd += fmt.Sprintf(` --rpc --rpcaddr "%s" --rpcport "%d"`,
+		cmd += fmt.Sprintf(` --rpc --rpcaddr "%s" --rpcport "%d" --rpcapi "db,eth,net,web3,personal,admin"`,
 														pc.config.RpcAddr,
 														pc.config.RpcPort,)
 	}
